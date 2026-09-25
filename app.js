@@ -38,10 +38,22 @@ const timeAgo = iso => {
   if (m < 60 * 24) return `${Math.round(m / 60)}h ago`;
   return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 };
+const fmtTime = iso => new Date(iso).toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) + ` (${timeAgo(iso)})`;
 const dayIn = tz => { try { return new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); } catch { return new Date().toISOString().slice(0, 10); } };
 const prettyDate = d => new Date(d + "T12:00:00").toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" });
+// Old days are stored gzipped (data/YYYY-MM-DD.json.gz); unzip them in the browser.
+async function loadDayFile(date, gz) {
+  const res = await fetch(`data/${date}.json${gz ? ".gz" : ""}`, { cache: "no-cache" });
+  if (!res.ok) throw new Error(res.status);
+  const buf = new Uint8Array(await res.arrayBuffer());
+  const zipped = buf[0] === 0x1f && buf[1] === 0x8b; // server may already have decoded it
+  const text = zipped
+    ? await new Response(new Blob([buf]).stream().pipeThrough(new DecompressionStream("gzip"))).text()
+    : new TextDecoder().decode(buf);
+  return JSON.parse(text);
+}
 const readHash = () => Object.fromEntries(new URLSearchParams(location.hash.slice(1)));
-const coverage = a => a.feeds?.length || 1;
+const coverage = a => a.feeds?.length || a.n || 1;
 // "Top" score: how important Gemini judged it + how many feeds carried it.
 const score = a => (a.importance || 4) + Math.log2(coverage(a)) * 1.5;
 const byTop = (x, y) => score(y) - score(x) || y.published.localeCompare(x.published);
@@ -209,9 +221,9 @@ function App() {
     setDay(null); setSelected(null); setScope("world"); setSort("top");
     if (date !== today) setHours(0);
     listRef.current?.scrollTo(0, 0);
-    fetch(`data/${date}.json`, { cache: "no-cache" }).then(r => r.ok ? r.json() : Promise.reject())
-      .then(setDay).catch(() => setDay({ date, articles: [] }));
-  }, [date]);
+    const row = dates?.find(d => d.date === date);
+    loadDayFile(date, row?.gz).then(setDay).catch(() => setDay({ date, articles: [] }));
+  }, [date, dates]);
 
   useEffect(() => {
     const p = new URLSearchParams();
@@ -325,7 +337,7 @@ function App() {
         <div class="panel-head">
           <div class="panel-title">
             <strong>${isToday ? "Today's headlines" : `Headlines · ${date ? prettyDate(date) : ""}`}</strong>
-            ${meta?.updated && isToday && html`<span class="updated">updated ${timeAgo(meta.updated)}</span>`}
+            ${meta?.updated && html`<span class="updated">Last updated ${fmtTime(meta.updated)}</span>`}
           </div>
           <div class="seg">
             <button class=${scope === "world" ? "on" : ""} onClick=${() => setScope("world")}>Whole world · ${filtered.length}</button>

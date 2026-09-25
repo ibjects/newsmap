@@ -172,9 +172,11 @@ async function main() {
     it.id = hash(normTitle(it.title));
     const feedName = feeds[f].name;
     const old = known.get(it.id);
-    if (old) {                                   // already stored: just record the extra coverage
+    if (old) {                                   // already stored: record extra coverage + that it's still live
       old.a.feeds = old.a.feeds || [];
-      if (!old.a.feeds.includes(feedName)) { old.a.feeds.push(feedName); dirty.add(old.day.date); }
+      if (!old.a.feeds.includes(feedName)) old.a.feeds.push(feedName);
+      old.a.lastSeen = now.toISOString();
+      dirty.add(old.day.date);
       return;
     }
     if (queued.has(it.id)) { queued.get(it.id).feeds.add(feedName); return; }
@@ -201,7 +203,7 @@ async function main() {
       dirty.add(day.date);
       day.articles.push({
         id: it.id, title: r.title || it.title, summary: r.summary || it.summary, url: it.url, source: it.source,
-        published: it.published.toISOString(), category: CATEGORIES.includes(r.category) ? r.category : "other",
+        published: it.published.toISOString(), fetched: now.toISOString(), lastSeen: now.toISOString(), category: CATEGORIES.includes(r.category) ? r.category : "other",
         importance: Math.min(10, Math.max(1, Math.round(r.importance) || 3)), feeds: [...it.feeds],
         people: r.people || [], topics: r.topics || [], locations,
       });
