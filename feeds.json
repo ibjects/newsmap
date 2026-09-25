@@ -1,0 +1,247 @@
+[
+  {
+    "name": "BBC World",
+    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "hint": "Global"
+  },
+  {
+    "name": "Al Jazeera",
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "hint": "Global"
+  },
+  {
+    "name": "The Guardian World",
+    "url": "https://www.theguardian.com/world/rss",
+    "hint": "Global"
+  },
+  {
+    "name": "NPR World",
+    "url": "https://feeds.npr.org/1004/rss.xml",
+    "hint": "Global"
+  },
+  {
+    "name": "DW",
+    "url": "https://rss.dw.com/rdf/rss-en-all",
+    "hint": "Global"
+  },
+  {
+    "name": "France 24",
+    "url": "https://www.france24.com/en/rss",
+    "hint": "Global"
+  },
+  {
+    "name": "NYT World",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "hint": "Global"
+  },
+  {
+    "name": "UN News",
+    "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+    "hint": "Global"
+  },
+  {
+    "name": "BBC Asia",
+    "url": "https://feeds.bbci.co.uk/news/world/asia/rss.xml",
+    "hint": "Region: Asia"
+  },
+  {
+    "name": "BBC Africa",
+    "url": "https://feeds.bbci.co.uk/news/world/africa/rss.xml",
+    "hint": "Region: Africa"
+  },
+  {
+    "name": "BBC Latin America",
+    "url": "https://feeds.bbci.co.uk/news/world/latin_america/rss.xml",
+    "hint": "Region: Latin America"
+  },
+  {
+    "name": "BBC Middle East",
+    "url": "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml",
+    "hint": "Region: Middle East"
+  },
+  {
+    "name": "BBC Europe",
+    "url": "https://feeds.bbci.co.uk/news/world/europe/rss.xml",
+    "hint": "Region: Europe"
+  },
+  {
+    "name": "Google News USA",
+    "url": "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
+    "hint": "Country: USA"
+  },
+  {
+    "name": "Google News United Kingdom",
+    "url": "https://news.google.com/rss?hl=en-GB&gl=GB&ceid=GB:en",
+    "hint": "Country: United Kingdom"
+  },
+  {
+    "name": "Google News India",
+    "url": "https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en",
+    "hint": "Country: India"
+  },
+  {
+    "name": "Google News Australia",
+    "url": "https://news.google.com/rss?hl=en-AU&gl=AU&ceid=AU:en",
+    "hint": "Country: Australia"
+  },
+  {
+    "name": "Google News Canada",
+    "url": "https://news.google.com/rss?hl=en-CA&gl=CA&ceid=CA:en",
+    "hint": "Country: Canada"
+  },
+  {
+    "name": "Google News Singapore",
+    "url": "https://news.google.com/rss?hl=en-SG&gl=SG&ceid=SG:en",
+    "hint": "Country: Singapore"
+  },
+  {
+    "name": "Google News Malaysia",
+    "url": "https://news.google.com/rss?hl=en-MY&gl=MY&ceid=MY:en",
+    "hint": "Country: Malaysia"
+  },
+  {
+    "name": "Google News Pakistan",
+    "url": "https://news.google.com/rss?hl=en-PK&gl=PK&ceid=PK:en",
+    "hint": "Country: Pakistan"
+  },
+  {
+    "name": "Google News Nigeria",
+    "url": "https://news.google.com/rss?hl=en-NG&gl=NG&ceid=NG:en",
+    "hint": "Country: Nigeria"
+  },
+  {
+    "name": "Google News South Africa",
+    "url": "https://news.google.com/rss?hl=en-ZA&gl=ZA&ceid=ZA:en",
+    "hint": "Country: South Africa"
+  },
+  {
+    "name": "Google News Kenya",
+    "url": "https://news.google.com/rss?hl=en-KE&gl=KE&ceid=KE:en",
+    "hint": "Country: Kenya"
+  },
+  {
+    "name": "Google News Philippines",
+    "url": "https://news.google.com/rss?hl=en-PH&gl=PH&ceid=PH:en",
+    "hint": "Country: Philippines"
+  },
+  {
+    "name": "Google News France",
+    "url": "https://news.google.com/rss?hl=fr&gl=FR&ceid=FR:fr",
+    "hint": "Country: France"
+  },
+  {
+    "name": "Google News Germany",
+    "url": "https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de",
+    "hint": "Country: Germany"
+  },
+  {
+    "name": "Google News Spain",
+    "url": "https://news.google.com/rss?hl=es&gl=ES&ceid=ES:es",
+    "hint": "Country: Spain"
+  },
+  {
+    "name": "Google News Brazil",
+    "url": "https://news.google.com/rss?hl=pt-BR&gl=BR&ceid=BR:pt-419",
+    "hint": "Country: Brazil"
+  },
+  {
+    "name": "Google News Mexico",
+    "url": "https://news.google.com/rss?hl=es-419&gl=MX&ceid=MX:es-419",
+    "hint": "Country: Mexico"
+  },
+  {
+    "name": "Google News Japan",
+    "url": "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja",
+    "hint": "Country: Japan"
+  },
+  {
+    "name": "Google News Indonesia",
+    "url": "https://news.google.com/rss?hl=id&gl=ID&ceid=ID:id",
+    "hint": "Country: Indonesia"
+  },
+  {
+    "name": "Google News United Arab Emirates",
+    "url": "https://news.google.com/rss?hl=ar&gl=AE&ceid=AE:ar",
+    "hint": "Country: United Arab Emirates"
+  },
+  {
+    "name": "Local: New York",
+    "url": "https://news.google.com/rss/headlines/section/geo/New%20York?hl=en-US&gl=US&ceid=US:en",
+    "hint": "Local: New York"
+  },
+  {
+    "name": "Local: Los Angeles",
+    "url": "https://news.google.com/rss/headlines/section/geo/Los%20Angeles?hl=en-US&gl=US&ceid=US:en",
+    "hint": "Local: Los Angeles"
+  },
+  {
+    "name": "Local: Chicago",
+    "url": "https://news.google.com/rss/headlines/section/geo/Chicago?hl=en-US&gl=US&ceid=US:en",
+    "hint": "Local: Chicago"
+  },
+  {
+    "name": "Local: London",
+    "url": "https://news.google.com/rss/headlines/section/geo/London?hl=en-GB&gl=GB&ceid=GB:en",
+    "hint": "Local: London"
+  },
+  {
+    "name": "Local: Mumbai",
+    "url": "https://news.google.com/rss/headlines/section/geo/Mumbai?hl=en-IN&gl=IN&ceid=IN:en",
+    "hint": "Local: Mumbai"
+  },
+  {
+    "name": "Local: Delhi",
+    "url": "https://news.google.com/rss/headlines/section/geo/Delhi?hl=en-IN&gl=IN&ceid=IN:en",
+    "hint": "Local: Delhi"
+  },
+  {
+    "name": "Local: Kuala Lumpur",
+    "url": "https://news.google.com/rss/headlines/section/geo/Kuala%20Lumpur?hl=en-MY&gl=MY&ceid=MY:en",
+    "hint": "Local: Kuala Lumpur"
+  },
+  {
+    "name": "Local: Singapore",
+    "url": "https://news.google.com/rss/headlines/section/geo/Singapore?hl=en-SG&gl=SG&ceid=SG:en",
+    "hint": "Local: Singapore"
+  },
+  {
+    "name": "Local: Sydney",
+    "url": "https://news.google.com/rss/headlines/section/geo/Sydney?hl=en-AU&gl=AU&ceid=AU:en",
+    "hint": "Local: Sydney"
+  },
+  {
+    "name": "Local: Toronto",
+    "url": "https://news.google.com/rss/headlines/section/geo/Toronto?hl=en-CA&gl=CA&ceid=CA:en",
+    "hint": "Local: Toronto"
+  },
+  {
+    "name": "Local: Lagos",
+    "url": "https://news.google.com/rss/headlines/section/geo/Lagos?hl=en-NG&gl=NG&ceid=NG:en",
+    "hint": "Local: Lagos"
+  },
+  {
+    "name": "Local: Karachi",
+    "url": "https://news.google.com/rss/headlines/section/geo/Karachi?hl=en-PK&gl=PK&ceid=PK:en",
+    "hint": "Local: Karachi"
+  },
+  {
+    "name": "Local: Madrid",
+    "url": "https://news.google.com/rss/headlines/section/geo/Madrid?hl=es&gl=ES&ceid=ES:es",
+    "hint": "Local: Madrid"
+  },
+  {
+    "name": "Local: Paris",
+    "url": "https://news.google.com/rss/headlines/section/geo/Paris?hl=fr&gl=FR&ceid=FR:fr",
+    "hint": "Local: Paris"
+  },
+  {
+    "name": "Local: Tokyo",
+    "url": "https://news.google.com/rss/headlines/section/geo/Tokyo?hl=ja&gl=JP&ceid=JP:ja",
+    "hint": "Local: Tokyo"
+  },
+  {
+    "name": "NYT New York",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml",
+    "hint": "Local: New York City"
+  }
+]

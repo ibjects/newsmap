@@ -1,0 +1,39 @@
+name: Update news
+
+on:
+  schedule:
+    - cron: "7 * * * *"   # every hour at :07
+  workflow_dispatch:       # "Run workflow" button for a manual run
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-news
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch + geotag news
+        run: node scripts/update.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}   # optional repo variable, e.g. "gemini-flash-latest"
+          NEWS_TIMEZONE: Asia/Kuala_Lumpur        # which timezone defines a "day"
+          START_DATE: "2026-09-25"
+      - name: Commit data
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "news: $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git pull --rebase
+          git push
